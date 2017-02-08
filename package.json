@@ -1,0 +1,26 @@
+{
+  "name": "czfcme",
+  "version": "1.0.0",
+  "description": "猴子的网站",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luoye-fe/czfcme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luoye-fe/czfcme/issues"
+  },
+  "homepage": "https://github.com/luoye-fe/czfcme#readme",
+  "dependencies": {
+    "vue": "^2.1.10",
+    "vue-router": "^2.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
