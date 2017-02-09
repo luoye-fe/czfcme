@@ -1,5 +1,5 @@
 <template>
-	<m-head link="/"></m-head>
+	<m-head link="/list"></m-head>
 </template>
 <script>
 require('../../assets/css/reset.css');

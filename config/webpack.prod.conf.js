@@ -32,14 +32,14 @@ let webpackConfig = merge(baseWebpackConfig, {
 		}),
 		new ExtractTextPlugin({
 			filename: 'css/[name].[contenthash].css'
-		}),
+		})
 	]
 });
 
 Object.keys(baseWebpackConfig.entry).forEach(function(name) {
 	webpackConfig.plugins.push(
 		new HtmlWebpackPlugin({
-			filename: `${name}.html`,
+			filename: `${name}/index.html`,
 			template: path.join(__dirname, '../src/template/main.html'),
 			inject: true,
 			minify: {

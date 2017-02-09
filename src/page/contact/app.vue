@@ -1,5 +1,5 @@
 <template>
-	<m-head link="/"></m-head>
+	<m-head link="/contact"></m-head>
 </template>
 <script>
 require('../../assets/css/reset.css');
