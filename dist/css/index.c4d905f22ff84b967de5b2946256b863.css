@@ -1,0 +1,148 @@
+html, body {
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body, div, p, ul, ol, li, dl, dt, dd, form, input, table, img, h1, h2, h3, h4, h5, h6, header, section, footer, nav, figure, figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden], template {
+    display: none;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:link, a:hover, a:focus, a:visited {
+    outline: none;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    list-style-type: none;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: visible;
+    text-transform: none;
+}
+
+select {
+    text-transform: none;
+}
+
+button, html input[type=button] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+img {
+    border: none;
+    display: inline-block;
+}
+
+em, i, b, strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
+input:focus {
+    outline: none;
+}
+
+header[data-v-0e228be4] {
+	width: 100%;
+	height: 80px;
+	background: #20a0ff;
+}
+.container[data-v-0e228be4] {
+	width: 1140px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+.container>h1[data-v-0e228be4] {
+	float: left;
+}
+.nav[data-v-0e228be4] {
+	float: right;
+	height: 100%;
+	line-height: 80px;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+}
+.nav li[data-v-0e228be4] {
+	margin: 0;
+	float: left;
+	list-style: none;
+	position: relative;
+	cursor: pointer;
+	margin-left: 20px;
+}
+.nav li a[data-v-0e228be4] {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	padding: 0 20px;
+	opacity: .8;
+}
+.nav li a[data-v-0e228be4]:hover {
+	opacity: 1;
+}
+.nav li a.active[data-v-0e228be4] {
+	font-weight: 700;
+	opacity: 1;
+}
+.nav li a.active[data-v-0e228be4]::before {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: #99d2fc;
+}

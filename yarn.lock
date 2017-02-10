@@ -3492,9 +3492,12 @@ vue-loader@^10.3.0:
     vue-style-loader "^2.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-router@^2.2.0:
-  version "2.2.0"
-  resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.2.0.tgz#65a29ce23d718ddf09237938a58a01b3d1acc77c"
+vue-server-renderer@^2.1.10:
+  version "2.1.10"
+  resolved "http://registry.npm.taobao.org/vue-server-renderer/download/vue-server-renderer-2.1.10.tgz#b88b75c7a004a9be70fecc1a6b86be7d0082c165"
+  dependencies:
+    de-indent "^1.0.2"
+    he "^1.1.0"
 
 vue-style-loader@^2.0.0:
   version "2.0.0"
