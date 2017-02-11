@@ -10,7 +10,6 @@ export default new Router({
 		component: require('../components/index.vue')
 	}, {
 		path: '/index',
-		name: 'Index',
 		component: require('../components/index.vue')
 	}, {
 		path: '/list',
