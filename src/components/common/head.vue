@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<div class="container">
-			<h1>CZFCME</h1>
+			<h1><router-link :to="{name: 'Index'}">CZFCME</router-link></h1>
 			<ul class="nav">
 				<li><router-link :to="{name: 'Index'}" :class="{active: $route.path === '/'}">首页</router-link></li>
 				<li><router-link :to="{name: 'List'}" :class="{active: $route.path === '/list'}">产品列表</router-link></li>
@@ -24,6 +24,9 @@ header {
 }
 .container>h1 {
 	float: left;
+}
+.container>h1 a {
+	color: #fff;
 }
 .nav {
 	float: right;
