@@ -27,7 +27,6 @@ header {
 }
 
 .container {
-	width: 1140px;
 	margin: 0 auto;
 	padding: 0 30px;
 	box-sizing: border-box;
@@ -85,6 +84,14 @@ header {
 	width: 100%;
 	height: 4px;
 	background: #99d2fc;
+}
+
+@media screen and (min-width: 1140px) {
+	.container {
+		max-width: 1140px;
+		min-width: 668px;
+		width: 90%;
+	}
 }
 
 @media screen and (max-width: 700px) {
