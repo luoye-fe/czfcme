@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
 	routes: [{
 		path: '/',
 		name: 'Index',
@@ -17,6 +17,9 @@ export default new Router({
 		component: require('../components/list.vue')
 	}, {
 		path: '/detail',
+		redirect: '/detail/1'
+	}, {
+		path: '/detail/:id',
 		name: 'Detail',
 		component: require('../components/detail.vue')
 	}, {
@@ -29,3 +32,6 @@ export default new Router({
 		component: require('../components/download.vue')
 	}]
 });
+
+
+export default router;
