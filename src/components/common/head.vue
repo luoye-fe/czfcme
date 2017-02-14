@@ -24,6 +24,8 @@ header {
 	width: 100%;
 	min-height: 80px;
 	background: #20a0ff;
+	position: relative;
+	z-index: 999;
 }
 
 .container {
@@ -94,7 +96,7 @@ header {
 	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
 	header {
 		float: none;
 		display: block;
