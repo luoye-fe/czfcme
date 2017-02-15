@@ -14,7 +14,6 @@ export default {
 	margin: 0 auto;
 	border: 1px solid #000;
 	box-sizing: border-box;
-	overflow-x: hidden;
 }
 @media screen and (max-width: 768px) {
 	.content {
