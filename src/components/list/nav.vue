@@ -99,5 +99,8 @@ export default {
 		width: 18px;
 		height: 18px;
 	}
+	.nav li a:hover {
+		background: none;
+	}
 }
 </style>
