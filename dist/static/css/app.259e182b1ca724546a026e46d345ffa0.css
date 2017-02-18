@@ -102,7 +102,8 @@ header[data-v-35289a5b] {
 	width: 100%;
 	min-height: 80px;
 	background: #20a0ff;
-	position: relative;
+	position: fixed;
+	top: 0;left: 0;
 	z-index: 999;
 }
 .container[data-v-35289a5b] {
@@ -212,6 +213,12 @@ a {
 .container {
 	width: 100%;
 	position: relative;
+	margin-top: 80px;
+}
+@media screen and (max-width: 768px) {
+.container {
+		margin-top: 94px;
+}
 }
 
 .sidenav[data-v-580be7eb] {
@@ -268,7 +275,7 @@ a {
 }
 @media screen and (max-width: 700px) {
 .sidenav[data-v-580be7eb] {
-		padding-top: 95px;
+		padding-top: 94px;
 }
 .menu[data-v-580be7eb] {
 		top: 98px;
@@ -293,4 +300,4 @@ a {
 }
 }
 
-/*# sourceMappingURL=app.b9b9f5c36ae7accbe56a645dd6ff5839.css.map*/
+/*# sourceMappingURL=app.259e182b1ca724546a026e46d345ffa0.css.map*/
