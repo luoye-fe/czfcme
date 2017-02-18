@@ -24,7 +24,8 @@ header {
 	width: 100%;
 	min-height: 80px;
 	background: #20a0ff;
-	position: relative;
+	position: fixed;
+	top: 0;left: 0;
 	z-index: 999;
 }
 
