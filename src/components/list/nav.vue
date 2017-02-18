@@ -91,7 +91,7 @@ export default {
 }
 @media screen and (max-width: 700px) {
 	.sidenav {
-		padding-top: 95px;
+		padding-top: 94px;
 	}
 	.menu {
 		top: 98px;
