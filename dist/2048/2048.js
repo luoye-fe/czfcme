@@ -1,7 +1,28 @@
+//表格大小自适应
+onload=function(){
+    var screenx=screen.availWidth
+    var screeny=screen.availHeight
+    
+    if(screenx>screeny){
+        for(i=0;i<4;i++){
+            var temp=num[i];
+            for(j=0;j<4;j++){
+                document.getElementById(temp[j]).style.width=document.getElementById(temp[j]).style.height=screeny/6+"px";}
+            }
+    }//电脑
+    else{
+        for(i=0;i<4;i++){
+            var temp=num[i];
+            for(j=0;j<4;j++){
+                document.getElementById(temp[j]).style.width=document.getElementById(temp[j]).style.height=screenx/2+"px";}
+        }    
+        document.getElementById("main").style.margin=0;    
+    }//手机
+}
 //alert ("hello world");
 
-//未解决bug，方块不能移动，却产生随机数
-
+//<方块不能移动，却产生随机数>已修复
+//<底层2248,22不合并>已修复
 var num=new Array(3);
 var zb=new Array;  //zb,坐标
 var a=new Array(3);
@@ -9,7 +30,8 @@ var b=new Array(3);
 var c=new Array(3);
 var d=new Array(3);
 var canmove=0; //可以移动
-var realstart;
+var realstart;//是否开始
+var realwin;//是否2048
 var cells = new Array
 var a1=a2=a3=a4=b1=b2=b3=b4=c1=c2=c3=c4=d1=d2=d3=d4="";
 cells=[a1,a2,a3,a4,b1,b2,b3,b4,c1,c2,c3,c4,d1,d2,d3,d4];
@@ -18,6 +40,55 @@ b=["b1","b2","b3","b4"]
 c=["c1","c2","c3","c4"]
 d=["d1","d2","d3","d4"]
 num=[a,b,c,d];
+
+//重点笔记：element.addEventListener('',要么匿名函数function(){...}要么调用不带括号的函数，false表示冒泡)
+document.body.addEventListener('keydown',movecell,false);//keydown功能
+document.body.addEventListener('touchstart',touchstartfunc,false);//touch功能
+document.body.addEventListener('touchmove',touchmovefunc,false);
+document.body.addEventListener('touchend',function(){touchact=0;},false);
+//touch 
+//function touchall(){     // 疑问：能否把两个函数放在一个函数里并正常调用。
+    var startx,starty,endx,endy,direction,touchact;
+    function touchstartfunc(event){
+        //alert("keydown success");
+        event.preventDefault();
+        touchact=1;
+        startx=event.targetTouches[0].pageX;
+        starty=event.targetTouches[0].pageY;
+        //alert(startx + " and " + starty);
+    }
+    function touchmovefunc(event){      
+        endx=event.changedTouches[0].pageX;
+        endy=event.changedTouches[0].pageY;
+        console.log("touchmove:" + endx + " and " + endy);
+        touchSlide();
+    }       
+    function touchSlide(){
+        var dx,dy;
+        dx=endx-startx;
+        dy=endy-starty;
+        if(dx>15){direction=0}//right
+        else if(dx<15){direction=1};//left
+        if(dy>15){direction=2}//down
+        else if(dy<-15){direction=3};//up
+        //alert("direction="+ direction);
+        if(touchact===1){
+        movecell('touch');}
+        touchact=0;
+    }
+//}
+//test
+function test(){ 
+    //debugger;
+    cells[12]=2;
+    cells[13]=2;
+    cells[14]=4;
+    cells[15]=4;
+    document.getElementById("d1").innerHTML=(2);
+    document.getElementById("d2").innerHTML=(2);
+    document.getElementById("d3").innerHTML=(4);
+    document.getElementById("d4").innerHTML=(4);
+}
 
 function startgo(){
     //debugger;
@@ -68,7 +139,10 @@ function tof(){  //two or four
 }
 function score(){  //计算得分
     var s=Math.max.apply(null,cells);
-    if(s==2048){alert("You Win!!!")};
+    if(realwin="" && s===2048){
+        alert("You Win!!!");
+        realwin=1;
+        }
     return s;//apply啥意思？法克
 }
 function panshu(){ //判输
@@ -100,16 +174,33 @@ function cellTonum(){  //cells数组对应num二维数组，数字写入表格
 function movecell(event){ //wasd动作
     //debugger;
     //alert(event.charCode);
+    //alert(event.keyCode);
+    //new touch event
 
     if(realstart!=1){
         return;
     }
-    switch(event.charCode){
-        case 97:movea();break;
-        case 100:moved();break;
-        case 119:movew();break;
-        case 115:moves();break;
+    if(event!='touch'){
+        switch(event.keyCode){
+            case 65:movea();break;
+            case 37:movea();break;
+            case 68:moved();break;
+            case 39:moved();break;
+            case 87:movew();break;
+            case 38:movew();break;
+            case 83:moves();break;
+            case 40:moves();break;
+            }   
     }
+    else{
+        switch(direction){
+            case 1:movea();break;
+            case 0:moved();break;
+            case 3:movew();break;
+            case 2:moves();break;
+        }
+    }
+    
     paintColor();
     sjzb();
     if(panshu()==-1){
@@ -184,6 +275,7 @@ function moved(){  //右移，d
         };
     };
     //归右
+    //debugger;
         for(var i=0;i<4;i++){ //每行合并
             if(cells[i*4+3]==cells[i*4+2] && cells[i*4+3]!=0){
                 cells[i*4+3]=cells[i*4+3]*2;
@@ -195,7 +287,7 @@ function moved(){  //右移，d
                 cells[i*4+1]="";     
                 canmove=1;          
             }
-            else if(cells[i*4+1]==cells[i*4+2] && cells[i*4+1]!=0){
+            if(cells[i*4+1]==cells[i*4+0] && cells[i*4+1]!=0){
                 cells[i*4+1]=cells[i*4+1]*2;
                 cells[i*4+0]="";           
                 canmove=1;
@@ -207,7 +299,7 @@ function moved(){  //右移，d
             for(var j=3;j>0;j--){
                 if(cells[i*4+j]==0 && cells[i*4+j-1]!=0){
                     cells[i*4+j]=cells[i*4+j-1];
-                    cells[i*4+j]="";
+                    cells[i*4+j-1]="";
                     canmove=1;
                 }
             }
@@ -306,7 +398,7 @@ function moves(){
 }
 
 function paintColor(){
-    debugger;
+    //debugger;
     var colors;
     var temp=new Array;
     for (var i=0;i<num.length;i++){
