@@ -44,15 +44,6 @@ a:link, a:hover, a:focus, a:visited {
 	text-decoration: none;
 }
 
-ul {
-	list-style: none;
-	list-style-type: none;
-}
-
-li {
-	list-style: none;
-}
-
 button {
 	-webkit-appearance: none;
 	-moz-appearance: none;

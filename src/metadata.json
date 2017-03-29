@@ -1,8 +1,8 @@
 {
 	"productList": [{
 		"id": 1,
-		"route": "超高压液压泵",
-		"name": "超高压液压泵",
+		"route": "手动/脚踏液压泵",
+		"name": "手动/脚踏液压泵",
 		"productList": [{
 			"id": 1,
 			"name": "超高压液压泵",

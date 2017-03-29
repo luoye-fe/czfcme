@@ -7,7 +7,7 @@
 					<router-link :to="{name: 'Index'}" :class="{active: $route.path === '/' || $route.path === '/index'}">首页</router-link>
 				</li>
 				<li>
-					<router-link :to="{name: 'List', query: { type: 1 }}" :class="{active: $route.path === '/list'}">产品列表</router-link>
+					<router-link :to="{name: 'List', query: { id: 1 }}" :class="{active: $route.path === '/list'}">产品列表</router-link>
 				</li>
 				<li>
 					<router-link :to="{name: 'Download'}" :class="{active: $route.path === '/download'}">资源下载</router-link>

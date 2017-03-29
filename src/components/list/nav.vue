@@ -1,7 +1,9 @@
 <template>
 	<div class="sidenav" :style="{left: showMenu ? '0' : '-200px'}">
 		<ul class="nav">
-			<li v-for="item in metaJSON.productList"><router-link :class="{active: $route.query.type === item.id}" :to="{name: 'List', query: { type: item.id}}">{{item.name}}</router-link></li>
+			<li v-for="(item, key) in metaJSON">
+				<router-link :class="{active: $route.query.id == key}" :to="{name: 'List', query: { id: key}}">{{item.title}}</router-link>
+			</li>
 		</ul>
 		<span class="menu" @click="toggleMenu">菜单</span>
 	</div>
@@ -9,7 +11,7 @@
 <script>
 import { IsPC } from '../../utils/index.js';
 
-import metaJSON from '../../metadata.json';
+import metaJSON from '../../metadata.js';
 
 export default {
 	name: 'List-nav',
@@ -46,6 +48,7 @@ export default {
 	padding-top: 80px;
 	box-sizing: border-box;
 	transition: all ease 0.2s;
+	z-index: 999;
 }
 .nav {
 	position: relative;
