@@ -50,15 +50,6 @@ a:link, a:hover, a:focus, a:visited {
 	text-decoration: none;
 }
 
-ul {
-	list-style: none;
-	list-style-type: none;
-}
-
-li {
-	list-style: none;
-}
-
 button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -98,11 +89,13 @@ em, i, b, strong {
 input:focus {
 	outline: none;
 }
+
 header[data-v-35289a5b] {
 	width: 100%;
 	min-height: 80px;
 	background: #20a0ff;
-	position: relative;
+	position: fixed;
+	top: 0;left: 0;
 	z-index: 999;
 }
 .container[data-v-35289a5b] {
@@ -193,25 +186,31 @@ header[data-v-35289a5b] {
 }
 }
 
-h1,
-h2 {
+h1[data-v-73e4e8a8],
+h2[data-v-73e4e8a8] {
 	font-weight: normal;
 }
-ul {
+ul[data-v-73e4e8a8] {
 	list-style-type: none;
 	padding: 0;
 }
-li {
+li[data-v-73e4e8a8] {
 	display: inline-block;
 	margin: 0 10px;
 }
-a {
+a[data-v-73e4e8a8] {
 	color: #42b983;
 }
 
 .container {
 	width: 100%;
 	position: relative;
+	margin-top: 80px;
+}
+@media screen and (max-width: 768px) {
+.container {
+		margin-top: 94px;
+}
 }
 
 .sidenav[data-v-580be7eb] {
@@ -223,6 +222,7 @@ a {
 	padding-top: 80px;
 	box-sizing: border-box;
 	transition: all ease 0.2s;
+	z-index: 999;
 }
 .nav[data-v-580be7eb] {
 	position: relative;
@@ -268,7 +268,7 @@ a {
 }
 @media screen and (max-width: 700px) {
 .sidenav[data-v-580be7eb] {
-		padding-top: 95px;
+		padding-top: 94px;
 }
 .menu[data-v-580be7eb] {
 		top: 98px;
@@ -281,16 +281,224 @@ a {
 }
 }
 
-.content[data-v-4bfd8041] {
-	width: 768px;
-	margin: 0 auto;
-	border: 1px solid #000;
-	box-sizing: border-box;
+.content {
+  width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 0;
 }
 @media screen and (max-width: 768px) {
-.content[data-v-4bfd8041] {
-		width: 100%;
+.content {
+    width: 86%;
+    margin: 0 auto;
 }
+}
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  position: relative;
+  margin: 1em 0;
+}
+.content h2:before,
+.content h3:before,
+.content h4:before,
+.content h5:before,
+.content h6:before {
+  content: "#";
+  color: #42b983;
+  position: absolute;
+  left: -0.7em;
+  top: -4px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.content h4:before,
+.content h5:before,
+.content h6:before {
+  content: "";
+}
+.content h2,
+.content h3 {
+  font-size: 22px;
+}
+.content h4,
+.content h5 {
+  font-size: 18px;
+}
+.content h6 {
+  font-size: 16px;
+}
+.content ul {
+  margin: 1rem 0;
+  padding-left: 30px;
+}
+.content p {
+  margin: 15px 0;
+  display: block;
+}
+.content a {
+  color: #42b983;
+  word-break: break-all;
+}
+.content blockquote {
+  margin: 2em 0;
+  padding-left: 20px;
+  border-left: 4px solid #42b983;
+}
+.content img {
+  display: block;
+  max-width: 100%;
+  margin: 1em auto;
+}
+.content table,
+.content figure.highlight {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+}
+.content .tip {
+  position: relative;
+  margin: 2em 0;
+  padding: 12px 24px 12px 30px;
+  border-left: 4px solid #f66;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: #f8f8f8;
+}
+.content .tip br {
+  display: none;
+}
+.content .tip:before {
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  content: "!";
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f66;
+  font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+pre {
+  color: #525252;
+}
+pre .function .keyword,
+pre .constant {
+  color: #0092db;
+}
+pre .keyword,
+pre .attribute {
+  color: #e96900;
+}
+pre .number,
+pre .literal {
+  color: #ae81ff;
+}
+pre .tag,
+pre .tag .title,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special {
+  color: #2973b7;
+}
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp {
+  color: #42b983;
+}
+pre .title {
+  color: #83B917;
+}
+pre .tag .value,
+pre .string,
+pre .subst,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt {
+  color: #42b983;
+}
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: #b3b3b3;
+}
+pre .deletion {
+  color: #BA4545;
+}
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
+}
+table {
+  max-width: 100%;
+  margin: 1em auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow-y: auto;
+  display: block;
+}
+table thead {
+  background-color: #ddd;
+}
+table thead th {
+  padding: 5px;
+  min-width: 80px;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+table thead th:last-child {
+  border-right: none;
+}
+table tbody tr:nth-child(2n) {
+  background-color: #eee;
+}
+table tbody td {
+  padding: 5px;
+  text-align: center;
+  vertical-align: text-top;
+  border-right: 1px solid #000;
+}
+table tbody td:last-child {
+  border-right: none;
 }
 
-/*# sourceMappingURL=app.b9b9f5c36ae7accbe56a645dd6ff5839.css.map*/
+/*# sourceMappingURL=app.dece696be82f7e691a22fb566529c5a4.css.map*/
