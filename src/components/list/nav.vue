@@ -2,7 +2,7 @@
 	<div class="sidenav" :style="{left: showMenu ? '0' : '-200px'}">
 		<ul class="nav">
 			<li v-for="(item, key) in metaJSON">
-				<router-link :class="{active: $route.query.id == key}" :to="{name: 'List', query: { id: key}}">{{item.title}}</router-link>
+				<router-link :class="{active: $route.query.id == key}" :to="{name: 'List', query: { id: key}}"><span>{{item.title}}</span></router-link>
 			</li>
 		</ul>
 		<span class="menu" @click="toggleMenu">菜单</span>
@@ -45,7 +45,7 @@ export default {
 	left: 0;
 	width: 200px;
 	height: 100%;
-	padding-top: 80px;
+	padding-top: 81px;
 	box-sizing: border-box;
 	transition: all ease 0.2s;
 	z-index: 999;
@@ -69,11 +69,17 @@ export default {
 	font-size: 14px;
 	color: #666;
 	transition: all ease 0.3s;
-	line-height: 40px;
+	line-height: 20px;
 	padding-left: 20px;
 	box-sizing: border-box;
 	font-weight: 700;
-	display: block;
+	display:table;
+	width: 100%;
+	height: 60px;
+}
+.nav li a span {
+	display:table-cell;
+	vertical-align: middle;
 }
 .nav li a:hover {
 	background: #d1dbe5;

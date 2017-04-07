@@ -1,5 +1,5 @@
 <template>
-	<div class="content post-content" v-html="content">
+	<div class="content post-content" v-html="content" ref="content">
 
 	</div>
 </template>
@@ -31,8 +31,12 @@ export default {
 			}
 		}
 	},
-	created() {
-
+	watch: {
+		productionId: {
+			handler() {
+				document.documentElement.scrollTop = 0
+			}
+		}
 	}
 };
 </script>
@@ -227,7 +231,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	overflow-y: auto;
-	display: block;
+	display: inline-block;
     thead {
         background-color: #ddd;
         th {
@@ -255,6 +259,4 @@ table {
         }
     }
 }
-
-
 </style>
