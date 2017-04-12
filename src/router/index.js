@@ -7,29 +7,29 @@ let router = new Router({
 	routes: [{
 		path: '/',
 		name: 'Index',
-		component: require('../components/index')
+		component: resolve => require(['../components/index'], resolve)
 	}, {
 		path: '/index',
-		component: require('../components/index')
+		component: resolve => require(['../components/index'], resolve)
 	}, {
 		path: '/list',
 		name: 'List',
-		component: require('../components/list')
+		component: resolve => require(['../components/list'], resolve)
 	}, {
 		path: '/detail',
 		redirect: '/detail/1'
 	}, {
 		path: '/detail/:id',
 		name: 'Detail',
-		component: require('../components/detail')
+		component: resolve => require(['../components/detail'], resolve)
 	}, {
 		path: '/contact',
 		name: 'Contact',
-		component: require('../components/contact')
+		component: resolve => require(['../components/contact'], resolve)
 	}, {
 		path: '/download',
 		name: 'Download',
-		component: require('../components/download')
+		component: resolve => require(['../components/download'], resolve)
 	}]
 });
 

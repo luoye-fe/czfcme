@@ -1,13 +1,17 @@
 <template>
 	<header>
 		<div class="container">
-			<h1><router-link :to="{name: 'Index'}">CZFCME</router-link></h1>
+			<h1>
+				<router-link :to="{name: 'Index'}">
+					<img src="http://onk96vraq.bkt.clouddn.com/logo.png">
+				</router-link>
+			</h1>
 			<ul class="nav">
 				<li>
 					<router-link :to="{name: 'Index'}" :class="{active: $route.path === '/' || $route.path === '/index'}">首页</router-link>
 				</li>
 				<li>
-					<router-link :to="{name: 'List', query: { id: 1 }}" :class="{active: $route.path === '/list'}">产品列表</router-link>
+					<router-link :to="{name: 'List', query: { id: '0-1' }}" :class="{active: $route.path === '/list'}">产品列表</router-link>
 				</li>
 				<li>
 					<router-link :to="{name: 'Download'}" :class="{active: $route.path === '/download'}">资源下载</router-link>
@@ -22,10 +26,7 @@
 <style scoped>
 header {
 	width: 100%;
-	min-height: 80px;
 	background: #20a0ff;
-	position: fixed;
-	top: 0;left: 0;
 	z-index: 999;
 }
 
@@ -33,14 +34,25 @@ header {
 	margin: 0 auto;
 	padding: 0 30px;
 	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
 }
 
 .container>h1 {
-	float: left;
+	display: block;
+	flex: 1;
 }
 
 .container>h1 a {
 	color: #fff;
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.container>h1 a img {
+	display: block;
+	width: 260px;
 }
 
 .nav {
@@ -88,7 +100,7 @@ header {
 	height: 4px;
 	background: #99d2fc;
 }
-
+/*
 @media screen and (min-width: 1140px) {
 	.container {
 		max-width: 1140px;
@@ -96,7 +108,7 @@ header {
 		width: 90%;
 	}
 }
-
+*/
 @media screen and (max-width: 768px) {
 	header {
 		float: none;
@@ -106,9 +118,17 @@ header {
 	.container {
 		width: 100%;
 		padding: 0;
+		flex-direction: column;
 	}
 	.container>h1 {
 		float: none;
+		margin-top: 10px;
+	}
+	.container>h1 a {
+		justify-content: center;
+	}
+	.container>h1 a img {
+		width: 200px;
 	}
 	.nav {
 		float: none;

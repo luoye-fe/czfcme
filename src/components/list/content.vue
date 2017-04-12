@@ -8,7 +8,8 @@ import metaJSON from '../../metadata.js';
 import showdown from 'showdown';
 
 const converter = new showdown.Converter({
-	tables: true
+	tables: true,
+	disableForced4SpacesIndentedSublists: true
 });
 
 export default {
@@ -25,7 +26,13 @@ export default {
 		content: function() {
 			if (this.productionId) {
 				// 从 markdown 解析
-				return converter.makeHtml(this.metaJSON[this.productionId].content);
+
+				let cur = this.productionId.split('-');
+				let content = '无内容';
+				try {
+					content = this.metaJSON[cur[0]].production[cur[1]]['content']
+				} catch(e) {};
+				return converter.makeHtml(content);
 			} else {
 				return `<p>无内容</p><a href="#/">返回首页</a>`;
 			}

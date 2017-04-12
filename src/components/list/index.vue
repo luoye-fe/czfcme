@@ -20,11 +20,6 @@ export default {
 .container {
 	width: 100%;
 	position: relative;
-	margin-top: 80px;
-}
-@media screen and (max-width: 768px) {
-	.container {
-		margin-top: 94px;
-	}
+	flex: 1;
 }
 </style>
