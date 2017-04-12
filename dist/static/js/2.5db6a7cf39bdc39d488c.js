@@ -1,0 +1,2 @@
+webpackJsonp([2,7],{106:function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("h1",[e._v("详情")])},staticRenderFns:[]}},29:function(e,t,n){var r=n(1)(n(59),n(106),null,null);e.exports=r.exports},59:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={name:"detail",created:function(){console.log(this.$route)}}}});
+//# sourceMappingURL=2.5db6a7cf39bdc39d488c.js.map

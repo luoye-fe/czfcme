@@ -1,0 +1,2 @@
+webpackJsonp([4,7],{108:function(n,e){n.exports={render:function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("h1",[n._v("联系我们")])},staticRenderFns:[]}},28:function(n,e,t){var r=t(1)(null,t(108),null,null);n.exports=r.exports}});
+//# sourceMappingURL=4.a0056a405bafd7806b82.js.map
