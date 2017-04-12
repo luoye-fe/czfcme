@@ -29,14 +29,14 @@ export default {
             this.showMenu = true;
             this.left = '-200px';
         } else {
+        	document.documentElement.addEventListener('click', (e) => {
+        		if ([...e.target.classList].indexOf('menu') === -1) {
+        			this.showMenu = false;
+        		}
+        	});
             this.showMenu = false;
             this.left = '-150px';
         }
-        document.documentElement.addEventListener('click', (e) => {
-        	if ([...e.target.classList].indexOf('menu') === -1) {
-        		this.showMenu = false;
-        	}
-        });
     },
     methods: {
         toggleMenu() {
